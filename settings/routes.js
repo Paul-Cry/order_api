@@ -13,5 +13,7 @@ module.exports = (app) => {
     app
         .route('/send/master')
         .post(usersController.sendMasterClass)
-
+    app
+        .route('/getFeedback')
+        .get(usersController.getAllFeedback)
 }

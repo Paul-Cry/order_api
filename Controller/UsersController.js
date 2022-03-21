@@ -38,6 +38,16 @@ exports.sendMasterClass = async (req, res)=>{
     })
 }
 
+exports.getAllFeedback = async (req, res)=>{
+    db.query("SELECT email, name, reviews FROM `feedback`;", async (error, rows, fields)=>{
+        if(error) {
+            response.status(400, error, res)
+        }else{
+            res.status(200).send(rows);
+        }
+    })
+}
+
 
 //Регистрация
 // exports.signup = async function(req, res) {
